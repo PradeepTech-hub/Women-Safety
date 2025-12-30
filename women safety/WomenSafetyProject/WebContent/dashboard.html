@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women Safety System - Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <header class="top-nav">
+        <div class="nav-container">
+            <h1 class="app-name">Women Safety System</h1>
+            <div class="user-menu">
+                <span>Welcome, User</span>
+                <div class="dropdown">
+                    <button class="dropbtn">Profile ▼</button>
+                    <div class="dropdown-content">
+                        <a href="#">Settings</a>
+                        <a href="login.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <ul>
+                <li class="active"><a href="#dashboard">📊 Dashboard</a></li>
+                <li><a href="#alert" onclick="sendAlert()">🚨 SOS Alert</a></li>
+                <li><a href="complaint.html">📝 Register Complaint</a></li>
+                <li><a href="#status">📋 Complaint Status</a></li>
+                <li><a href="#emergency-contacts">📞 Emergency Contacts</a></li>
+                <li><a href="login.html">🚪 Logout</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-header">
+                <h2>Dashboard Overview</h2>
+            </div>
+
+            <!-- SOS Button -->
+            <div class="sos-section">
+                <button class="sos-btn" onclick="sendAlert()">
+                    <span class="sos-icon">🚨</span>
+                    <span class="sos-text">EMERGENCY SOS</span>
+                </button>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">🚨</div>
+                    <div class="stat-info">
+                        <h3>5</h3>
+                        <p>Alerts Sent</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📝</div>
+                    <div class="stat-info">
+                        <h3>2</h3>
+                        <p>Active Complaints</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-info">
+                        <h3>3</h3>
+                        <p>Resolved Complaints</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <h3>Quick Actions</h3>
+                <div class="action-buttons">
+                    <button class="action-btn primary" onclick="sendAlert()">Send SOS Alert</button>
+                    <button class="action-btn secondary" onclick="window.location='complaint.html'">Register Complaint</button>
+                </div>
+            </div>
+
+            <!-- Emergency Contacts -->
+            <div id="emergency-contacts" class="emergency-contacts">
+                <h3>Emergency Contacts</h3>
+                <div class="contacts-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">🚔</div>
+                        <div class="contact-info">
+                            <h4>Police</h4>
+                            <p>100</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">🚑</div>
+                        <div class="contact-info">
+                            <h4>Ambulance</h4>
+                            <p>108</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">🔥</div>
+                        <div class="contact-info">
+                            <h4>Fire</h4>
+                            <p>101</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">👮‍♀️</div>
+                        <div class="contact-info">
+                            <h4>Women Helpline</h4>
+                            <p>1091</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('login') === '1') {
+            showNotification('Login successful!', 'success');
+        }
+
+        function showNotification(message, type) {
+            // Simple notification
+            alert(message);
+        }
+    </script>
+    <script src="js/alert.js"></script>
+</body>
+</html>

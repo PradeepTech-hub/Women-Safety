@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women Safety System - File Complaint</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="register-container">
+        <h2>File a Complaint</h2>
+        <form action="ComplaintServlet" method="post">
+            <div class="form-group">
+                <label for="type">Complaint Type</label>
+                <select id="type" name="complaint_type" required>
+                    <option value="">Select Type</option>
+                    <option value="Harassment">Harassment</option>
+                    <option value="Theft">Theft</option>
+                    <option value="Assault">Assault</option>
+                    <option value="Stalking">Stalking</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" rows="5" placeholder="Please describe the incident in detail..." required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" placeholder="Where did this happen?" required>
+            </div>
+            <button type="submit" class="login-btn">Submit Complaint</button>
+        </form>
+        <p style="margin-top: 20px; text-align: center;"><a href="dashboard.html">← Back to Dashboard</a></p>
+    </div>
+</body>
+</html>
